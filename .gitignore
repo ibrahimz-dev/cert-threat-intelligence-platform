@@ -1,0 +1,32 @@
+# --- Secrets: never commit the real .env file ------------------------------
+.env
+.env.*
+!.env.example
+
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Frontend ---------------------------------------------------------------
+frontend/node_modules/
+frontend/dist/
+web/node_modules/
+web/dist/
+
+# --- ClickHouse data + binary --------------------------------------------------
+tools/chdata/
+tools/clickhouse
+
+# --- Tor expert bundle (downloaded at runtime, ~32MB) --------------------------
+tools/tor-bundle/
+tools/tor-data/
+
+# --- Misc ---------------------------------------------------------------------
+.DS_Store
+*.log
