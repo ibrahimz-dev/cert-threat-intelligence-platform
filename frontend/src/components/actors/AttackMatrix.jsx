@@ -8,7 +8,7 @@ import { api, errorText, unwrap } from '../../services/api';
 import { tacticColor, tacticLabel } from '../../utils/tactics';
 import renderStixMarkdown from '../../utils/stix.jsx';
 
-const HIGHLIGHT = [79, 142, 247]; // #4F8EF7 primary
+const HIGHLIGHT = [212, 212, 216]; // #d4d4d8 primary grey
 
 /**
  * AttackMatrix — per-actor ATT&CK matrix (simple custom grid, no Navigator).

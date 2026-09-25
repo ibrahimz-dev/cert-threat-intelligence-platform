@@ -5,7 +5,7 @@
 // -----------------------------------------------------------------------------
 
 export const TACTIC_COLORS = {
-  reconnaissance: '#38bdf8',
+  reconnaissance: '#d4d4d8',
   'resource-development': '#818cf8',
   'initial-access': '#f472b6',
   execution: '#fb923c',
@@ -17,11 +17,11 @@ export const TACTIC_COLORS = {
   'lateral-movement': '#f87171',
   collection: '#2dd4bf',
   'command-and-control': '#c084fc',
-  exfiltration: '#60a5fa',
+  exfiltration: '#a1a1aa',
   impact: '#ef4444',
 };
 
-const FALLBACK = '#64748b'; // slate — unmapped / unknown
+const FALLBACK = '#71717a'; // zinc — unmapped / unknown
 
 export function tacticColor(tactic) {
   if (!tactic) return FALLBACK;

@@ -310,7 +310,7 @@ function RawTrace({ trace }) {
             </span>
             <CopyButton value={JSON.stringify(step, null, 2)} label="Copy step JSON" />
           </div>
-          <pre className="max-h-72 overflow-auto p-3 font-mono text-[11px] leading-relaxed text-slate-200">
+          <pre className="max-h-72 overflow-auto p-3 font-mono text-[11px] leading-relaxed text-zinc-200">
             {JSON.stringify(step, null, 2)}
           </pre>
         </div>

@@ -62,7 +62,7 @@ export const SEVERITY_COLORS: Record<SeverityBand, string> = {
   Critical: "#dc2626",
   High: "#f97316",
   Medium: "#eab308",
-  Low: "#94a3b8",
+  Low: "#a1a1aa",
 };
 
 export const SEVERITY_ORDER: SeverityBand[] = ["Critical", "High", "Medium", "Low"];
@@ -89,8 +89,8 @@ export function themeColor(id: string): string {
     case "breach": return "#a855f7";
     case "carding": return "#f43f5e";
     case "malware": return "#8b5cf6";
-    case "phishing": return "#38bdf8";
-    case "darkweb": return "#22d3ee";
-    default: return "#64748b";
+    case "phishing": return "#d4d4d8";
+    case "darkweb": return "#71717a";
+    default: return "#52525b";
   }
 }

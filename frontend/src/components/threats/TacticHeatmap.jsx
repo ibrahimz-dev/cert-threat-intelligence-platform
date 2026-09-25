@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 
 import { compactNumber, threatColor } from '../../utils/format';
 
-const PRIMARY_RGB = [79, 142, 247]; // #4F8EF7
+const PRIMARY_RGB = [212, 212, 216]; // #d4d4d8 grey
 
 /**
  * TacticHeatmap — threat category × MITRE ATT&CK tactic grid.

@@ -1,63 +1,69 @@
 import tailwindcssAnimate from 'tailwindcss-animate';
 
+/**
+ * Slate-grey dark theme (neutral zinc, no blue tint).
+ * `darkMode: 'class'` + HSL vars from src/index.css. The `base / surface /
+ * raised / line / ink / dim / faint` entries are compat aliases so existing
+ * classes (`bg-base`, `text-dim`, `border-line` …) render the grey palette
+ * without rewriting every component. `/ <alpha-value>` keeps opacity
+ * modifiers (bg-surface/80, border-line/60 …) working.
+ */
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ['class'],
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
     extend: {
-      // -------------------------------------------------------------------
-      // Semantic tokens resolved from CSS variables (see src/index.css).
-      // Each theme (dark / light) defines the RGB triplets, so flipping the
-      // `data-theme` attribute re-skins the whole app. `/<alpha-value>` lets
-      // Tailwind generate opacity variants (bg-ink/80 etc.).
-      // -------------------------------------------------------------------
       colors: {
-        base: 'rgb(var(--color-base) / <alpha-value>)',     // page background
-        surface: 'rgb(var(--color-surface) / <alpha-value>)', // card surface
-        raised: 'rgb(var(--color-raised) / <alpha-value>)',   // hover / raised
-        line: 'rgb(var(--color-line) / <alpha-value>)',       // borders
-        ink: 'rgb(var(--color-ink) / <alpha-value>)',         // primary text
-        dim: 'rgb(var(--color-dim) / <alpha-value>)',         // secondary text
-        faint: 'rgb(var(--color-faint) / <alpha-value>)',     // tertiary text
-
-        // ---- shadcn/ui tokens (HSL vars, see index.css) ----
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
+        border: 'hsl(var(--border) / <alpha-value>)',
+        input: 'hsl(var(--input) / <alpha-value>)',
+        ring: 'hsl(var(--ring) / <alpha-value>)',
+        background: 'hsl(var(--background) / <alpha-value>)',
+        foreground: 'hsl(var(--foreground) / <alpha-value>)',
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
+          DEFAULT: 'hsl(var(--primary) / <alpha-value>)',
+          foreground: 'hsl(var(--primary-foreground) / <alpha-value>)',
         },
         secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
+          DEFAULT: 'hsl(var(--secondary) / <alpha-value>)',
+          foreground: 'hsl(var(--secondary-foreground) / <alpha-value>)',
         },
         destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
+          DEFAULT: 'hsl(var(--destructive) / <alpha-value>)',
+          foreground: 'hsl(var(--destructive-foreground) / <alpha-value>)',
         },
         muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
+          DEFAULT: 'hsl(var(--muted) / <alpha-value>)',
+          foreground: 'hsl(var(--muted-foreground) / <alpha-value>)',
         },
         accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
+          DEFAULT: 'hsl(var(--accent) / <alpha-value>)',
+          foreground: 'hsl(var(--accent-foreground) / <alpha-value>)',
         },
         popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
+          DEFAULT: 'hsl(var(--popover) / <alpha-value>)',
+          foreground: 'hsl(var(--popover-foreground) / <alpha-value>)',
         },
         card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
+          DEFAULT: 'hsl(var(--card) / <alpha-value>)',
+          foreground: 'hsl(var(--card-foreground) / <alpha-value>)',
         },
-      },
-      fontFamily: {
-        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+
+        // ---- Compat aliases → grey tokens (do not use for new code) ----
+        base: 'hsl(var(--background) / <alpha-value>)', // page background (#111113 dark)
+        surface: 'hsl(var(--card) / <alpha-value>)', // card / panel surface (#1b1b1e dark)
+        raised: 'hsl(var(--muted) / <alpha-value>)', // hover / raised layer
+        line: 'hsl(var(--border) / <alpha-value>)', // borders / dividers
+        ink: 'hsl(var(--foreground) / <alpha-value>)', // primary text
+        dim: 'hsl(var(--muted-foreground) / <alpha-value>)', // secondary text
+        faint: 'hsl(var(--muted-foreground) / <alpha-value>)', // tertiary text
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -80,7 +86,7 @@ export default {
           '0%': { opacity: 0, transform: 'translateY(6px)' },
           '100%': { opacity: 1, transform: 'translateY(0)' },
         },
-        // shadcn/ui shadcn animations (accordion, dialogs, overlay).
+        // shadcn/ui animations (accordion, dialogs, overlay).
         'accordion-down': {
           from: { height: '0' },
           to: { height: 'var(--radix-accordion-content-height)' },

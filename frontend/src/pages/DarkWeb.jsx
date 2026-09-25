@@ -41,9 +41,9 @@ export default function DarkWeb() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-wrap items-start justify-between gap-3 rounded-xl border border-slate-500/30 bg-slate-500/5 px-4 py-3">
+      <div className="flex flex-wrap items-start justify-between gap-3 rounded-xl border border-zinc-500/30 bg-zinc-500/5 px-4 py-3">
         <div className="flex items-start gap-2 text-xs text-faint">
-          <Info size={14} className="mt-0.5 shrink-0 text-slate-400" />
+          <Info size={14} className="mt-0.5 shrink-0 text-zinc-400" />
           <p>
             <span className="font-semibold text-dim">Archived (Legacy).</span> This combined view is kept
             reachable for reference and is no longer the primary dark web surface. Use the richer

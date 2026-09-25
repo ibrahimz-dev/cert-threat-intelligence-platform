@@ -104,7 +104,7 @@ export function TacticsPreviewTile() {
               <div className="h-2 overflow-hidden rounded-full bg-raised">
                 <div
                   className="h-full rounded-full"
-                  style={{ width: `${Math.max(6, (n / max) * 100)}%`, background: 'linear-gradient(to right, #155e75, #22d3ee)' }}
+                  style={{ width: `${Math.max(6, (n / max) * 100)}%`, background: 'linear-gradient(to right, #52525b, #d4d4d8)' }}
                 />
               </div>
             </div>

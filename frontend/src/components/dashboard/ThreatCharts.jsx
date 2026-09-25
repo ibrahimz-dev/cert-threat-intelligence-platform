@@ -18,19 +18,19 @@ import {
 import { CATEGORY_COLORS, SEVERITY, compactNumber, severityStyle } from '../../utils/format';
 
 // ---------------------------------------------------------------------------
-// Shared chart styles — professional enterprise dark theme
+// Shared chart styles — slate-grey enterprise dark theme
 // ---------------------------------------------------------------------------
 const TOOLTIP_STYLE = {
-  backgroundColor: 'rgb(22 27 42)',        // --color-surface
-  border: '1px solid rgb(37 46 68)',        // --color-line
+  backgroundColor: 'rgb(24 24 27)',        // --color-surface (zinc-900)
+  border: '1px solid rgb(63 63 70)',        // --color-line (zinc-700)
   borderRadius: '8px',
-  color: 'rgb(241 245 249)',               // --color-ink
+  color: 'rgb(237 237 237)',               // --color-ink
   fontSize: '12px',
   boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
   padding: '10px 12px',
 };
-const AXIS = { stroke: 'rgb(71 85 105)', fontSize: 11 }; // --color-faint
-const GRID_COLOR = 'rgb(37 46 68)';                       // --color-line
+const AXIS = { stroke: 'rgb(113 113 122)', fontSize: 11 }; // --color-faint (zinc-500)
+const GRID_COLOR = 'rgb(39 39 42)';                       // zinc-800
 
 // ---------------------------------------------------------------------------
 // Custom tooltip
@@ -94,7 +94,7 @@ export function CategoryDonut({ data, height = 280 }) {
               stroke="none"
             >
               {sorted.map((d) => (
-                <Cell key={d.name} fill={CATEGORY_COLORS[d.name] || '#475569'} />
+                <Cell key={d.name} fill={CATEGORY_COLORS[d.name] || '#52525b'} />
               ))}
             </Pie>
             <Tooltip content={<ChartTooltip />} />
@@ -115,7 +115,7 @@ export function CategoryDonut({ data, height = 280 }) {
           <li key={d.name} className="flex items-center gap-2 text-[11px]">
             <span
               className="h-2 w-2 shrink-0 rounded-full"
-              style={{ background: CATEGORY_COLORS[d.name] || '#475569' }}
+              style={{ background: CATEGORY_COLORS[d.name] || '#52525b' }}
             />
             <span className="min-w-0 flex-1 truncate text-dim">{d.name}</span>
             <span className="font-mono font-semibold text-ink tabular-nums">
@@ -176,8 +176,8 @@ export function TimelineArea({ data, height = 240 }) {
         <AreaChart data={formatted} margin={{ top: 8, right: 4, left: -16, bottom: 0 }}>
           <defs>
             <linearGradient id="ctiVolume" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#4F8EF7" stopOpacity={0.3} />
-              <stop offset="100%" stopColor="#4F8EF7" stopOpacity={0.02} />
+              <stop offset="0%" stopColor="#d4d4d8" stopOpacity={0.3} />
+              <stop offset="100%" stopColor="#d4d4d8" stopOpacity={0.02} />
             </linearGradient>
           </defs>
           <CartesianGrid strokeDasharray="3 3" stroke={GRID_COLOR} vertical={false} />
@@ -203,11 +203,11 @@ export function TimelineArea({ data, height = 240 }) {
             type="monotone"
             dataKey="count"
             name="Items ingested"
-            stroke="#4F8EF7"
+            stroke="#d4d4d8"
             strokeWidth={2}
             fill="url(#ctiVolume)"
             dot={false}
-            activeDot={{ r: 4, fill: '#4F8EF7', strokeWidth: 0 }}
+            activeDot={{ r: 4, fill: '#d4d4d8', strokeWidth: 0 }}
           />
         </AreaChart>
       </ResponsiveContainer>

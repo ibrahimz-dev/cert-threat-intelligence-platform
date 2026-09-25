@@ -308,7 +308,7 @@ export function StreamPage({ kind }: { kind: Kind }) {
               peak {max}/bin
             </span>
           </div>
-          <div className="flex h-28 w-full items-stretch p-4 text-sky-400">
+          <div className="flex h-28 w-full items-stretch p-4 text-zinc-300">
             {pts.length > 1 ? (
               <Sparkline data={pts} />
             ) : (

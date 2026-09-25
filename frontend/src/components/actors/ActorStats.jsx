@@ -339,7 +339,7 @@ export default function ActorStats({ data, loading, error, onRetry }) {
                 value: t.actor_count,
                 to: `/malware/${encodeURIComponent(t.stix_id)}`,
               }))}
-              color="#4F8EF7"
+              color="#d4d4d8"
               unit="actors"
             />
           </Card>
@@ -399,7 +399,7 @@ export default function ActorStats({ data, loading, error, onRetry }) {
                 to: `/actors?actor=${encodeURIComponent(a.stix_id)}`,
                 unit: 'IOCs',
               }))}
-              color="#4F8EF7"
+              color="#d4d4d8"
               unit="IOCs"
             />
           )}

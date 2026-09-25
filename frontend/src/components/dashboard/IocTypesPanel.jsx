@@ -5,8 +5,8 @@ import { compactNumber } from '../../utils/format';
 
 // Professional, less saturated colors that work well on dark backgrounds
 const TYPE_META = {
-  ipv4:   { color: '#4F8EF7', label: 'IPv4' },
-  ipv6:   { color: '#60A5FA', label: 'IPv6' },
+  ipv4:   { color: '#d4d4d8', label: 'IPv4' },
+  ipv6:   { color: '#a1a1aa', label: 'IPv6' },
   domain: { color: '#A78BFA', label: 'Domain' },
   hash:   { color: '#F59E0B', label: 'Hash' },
   url:    { color: '#34D399', label: 'URL' },
@@ -32,7 +32,7 @@ export default function IocTypesPanel({ byType = {} }) {
       ) : (
         <div className="space-y-3">
           {entries.slice(0, 7).map(([type, n]) => {
-            const meta = TYPE_META[type] || { color: '#64748b', label: type.toUpperCase() };
+            const meta = TYPE_META[type] || { color: '#71717a', label: type.toUpperCase() };
             const pct = Math.max(4, Math.round((n / max) * 100));
             const sharePct = Math.round((n / total) * 100);
             return (

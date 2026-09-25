@@ -16,7 +16,7 @@ export default function Badge({ severity, children, tone = 'default', className 
   } else if (tone === 'blue') {
     classes = 'border border-primary/30 bg-primary/10 text-primary';
   } else {
-    // default (was cyan — now uses primary blue)
+    // default (was cyan — now uses primary grey)
     classes = 'border border-primary/30 bg-primary/10 text-primary';
   }
 

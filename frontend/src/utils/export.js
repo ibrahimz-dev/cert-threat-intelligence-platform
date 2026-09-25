@@ -80,18 +80,18 @@ export function exportPdf(sheet) {
 <html lang="en"><head><meta charset="utf-8">
 <title>${esc(sheet.vuln_cve)} — Alert Sheet</title>
 <style>
-  body{font-family:system-ui,sans-serif;color:#0f172a;max-width:820px;margin:32px auto;padding:0 24px;line-height:1.5}
-  h1{font-size:22px;border-bottom:3px solid #22d3ee;padding-bottom:8px}
-  h2{font-size:15px;margin-top:26px;color:#155e75;border-left:4px solid #22d3ee;padding-left:8px}
-  h3{font-size:13px;margin:14px 0 4px;color:#334155}
-  p,li{font-size:13px;color:#1e293b}
+  body{font-family:system-ui,sans-serif;color:#18181b;max-width:820px;margin:32px auto;padding:0 24px;line-height:1.5}
+  h1{font-size:22px;border-bottom:3px solid #a1a1aa;padding-bottom:8px}
+  h2{font-size:15px;margin-top:26px;color:#52525b;border-left:4px solid #a1a1aa;padding-left:8px}
+  h3{font-size:13px;margin:14px 0 4px;color:#3f3f46}
+  p,li{font-size:13px;color:#27272a}
   ul{margin:6px 0;padding-left:18px}
   .summary{border-collapse:collapse;width:100%;font-size:12px;margin:14px 0}
-  .summary td{border:1px solid #cbd5e1;padding:6px 8px}
+  .summary td{border:1px solid #d4d4d8;padding:6px 8px}
   .matrix{border-collapse:collapse;width:100%;font-size:12px}
-  .matrix th{background:#f1f5f9;text-align:left}
-  .matrix th,.matrix td{border:1px solid #cbd5e1;padding:8px;vertical-align:top}
-  .muted{color:#94a3b8;font-style:italic}
+  .matrix th{background:#f4f4f5;text-align:left}
+  .matrix th,.matrix td{border:1px solid #d4d4d8;padding:8px;vertical-align:top}
+  .muted{color:#a1a1aa;font-style:italic}
   @media print{body{margin:12mm auto}}
 </style></head><body>${sheetHtml(sheet)}</body></html>`);
   win.document.close();

@@ -6,9 +6,9 @@ export const TAXA: Cat[] = [
   { id:"cred", label:"Credential", accent:"#f59e0b", kf:["cred","password","login","hash","account"] },
   { id:"exploit", label:"Exploit", accent:"#fb923c", kf:["cve","exploit","0day","payload"] },
   { id:"leak", label:"DataLeak", accent:"#a855f7", kf:["leak","dump","db","exfil"] },
-  { id:"scam", label:"Scam", accent:"#38bdf8", kf:["scam","card","money","update"] },
-  { id:"dark", label:"DarkWeb", accent:"#22d3ee", kf:["onion","darkweb","deeplink"] },
-  { id:"other", label:"Other", accent:"#64748b", kf:[] },
+  { id:"scam", label:"Scam", accent:"#d4d4d8", kf:["scam","card","money","update"] },
+  { id:"dark", label:"DarkWeb", accent:"#71717a", kf:["onion","darkweb","deeplink"] },
+  { id:"other", label:"Other", accent:"#52525b", kf:[] },
 ];
 export function classify(fields: string): string {
   const t = fields.toLowerCase();

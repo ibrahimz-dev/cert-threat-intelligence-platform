@@ -66,11 +66,11 @@ function SecBlock({ title, engine, content, noValidate }) {
           </span>
         )}
       </div>
-      <pre className="max-h-80 overflow-auto rounded-lg border border-line bg-black/30 p-3 text-[11px] leading-relaxed text-slate-300">
+      <pre className="max-h-80 overflow-auto rounded-lg border border-line bg-black/30 p-3 text-[11px] leading-relaxed text-zinc-300">
         {content}
       </pre>
       {output && (
-        <pre className="mt-3 max-h-32 overflow-auto rounded-lg border border-line bg-black/30 p-3 text-[11px] text-slate-400">
+        <pre className="mt-3 max-h-32 overflow-auto rounded-lg border border-line bg-black/30 p-3 text-[11px] text-zinc-400">
           {output}
         </pre>
       )}

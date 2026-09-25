@@ -9,7 +9,7 @@ export const SEVERITY_COLORS: Record<SeverityBand, string> = {
   Critical: "#dc2626",
   High: "#f97316",
   Medium: "#eab308",
-  Low: "#94a3b8",
+  Low: "#a1a1aa",
 };
 
 /** band -> numeric weight, same mapping as the backend risk score. */
@@ -26,9 +26,9 @@ const THEME_COLORS: Record<string, string> = {
   breach: "#a855f7",
   carding: "#f43f5e",
   malware: "#8b5cf6",
-  phishing: "#38bdf8",
-  darkweb: "#22d3ee",
-  other: "#64748b",
+  phishing: "#d4d4d8",
+  darkweb: "#71717a",
+  other: "#52525b",
 };
 
 /** deterministic theme colour keyed by theme id. */

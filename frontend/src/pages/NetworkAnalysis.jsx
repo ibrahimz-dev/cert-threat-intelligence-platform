@@ -36,20 +36,20 @@ import Card from '../components/ui/Card';
 import { api, errorText, unwrap } from '../services/api';
 import { compactNumber, formatDate } from '../utils/format';
 
-const PROTO_COLORS = { tcp: '#38bdf8', udp: '#a78bfa', icmp: '#34d399' };
-const protoColor = (p) => PROTO_COLORS[p] || '#64748b';
+const PROTO_COLORS = { tcp: '#d4d4d8', udp: '#a78bfa', icmp: '#34d399' };
+const protoColor = (p) => PROTO_COLORS[p] || '#71717a';
 
 const TOOLTIP_STYLE = {
-  backgroundColor: 'rgb(22 27 42)',
-  border: '1px solid rgb(37 46 68)',
+  backgroundColor: 'rgb(24 24 27)',
+  border: '1px solid rgb(63 63 70)',
   borderRadius: '8px',
-  color: 'rgb(241 245 249)',
+  color: 'rgb(237 237 237)',
   fontSize: '12px',
   boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
   padding: '10px 12px',
 };
-const AXIS = { stroke: 'rgb(71 85 105)', fontSize: 11 };
-const GRID_COLOR = 'rgb(37 46 68)';
+const AXIS = { stroke: 'rgb(113 113 122)', fontSize: 11 };
+const GRID_COLOR = 'rgb(39 39 42)';
 
 const bytesLabel = (n) => {
   const v = Number(n) || 0;
@@ -135,7 +135,7 @@ function ConnGraph({ nodes, edges }) {
       svg.append('text')
         .attr('x', GRAPH_W / 2).attr('y', GRAPH_H / 2 - 10)
         .attr('text-anchor', 'middle')
-        .attr('fill', '#64748b').attr('font-size', 12)
+        .attr('fill', '#71717a').attr('font-size', 12)
         .text('No connection edges to draw (try a capture with TCP/UDP traffic).');
       return undefined;
     }
@@ -157,7 +157,7 @@ function ConnGraph({ nodes, edges }) {
     const nodeSel = g.append('g').selectAll('g').data(nodes).join('g');
 
     linkSel
-      .attr('stroke', '#334155')
+      .attr('stroke', '#3f3f46')
       .attr('stroke-opacity', 0.5)
       .attr('stroke-width', (d) => 0.6 + 3 * (Math.log1p(d.bytes || 0) / Math.log1p(maxBytes)));
 
@@ -165,18 +165,18 @@ function ConnGraph({ nodes, edges }) {
       .attr('cursor', 'pointer')
       .append('circle')
       .attr('r', (d) => 6 + 2 * Math.min(4, deg.get(d.id) || 0))
-      .attr('fill', (d) => (d.flagged ? '#ef4444' : d.internal ? '#475569' : '#a78bfa'))
-      .attr('stroke', '#0f172a')
+      .attr('fill', (d) => (d.flagged ? '#ef4444' : d.internal ? '#52525b' : '#a78bfa'))
+      .attr('stroke', '#18181b')
       .attr('stroke-width', (d) => (d.flagged ? 2 : 1))
       .on('click', (ev, d) => setSelected(d))
-      .on('mouseover', function () { d3.select(this).attr('stroke', '#f8fafc'); })
-      .on('mouseout', function () { d3.select(this).attr('stroke', '#0f172a'); });
+      .on('mouseover', function () { d3.select(this).attr('stroke', '#fafafa'); })
+      .on('mouseout', function () { d3.select(this).attr('stroke', '#18181b'); });
 
     nodeSel
       .append('text')
       .attr('dy', 16)
       .attr('text-anchor', 'middle')
-      .attr('fill', '#94a3b8')
+      .attr('fill', '#a1a1aa')
       .attr('font-size', 9)
       .text((d) => (nodes.length < 80 ? d.id : d.internal ? d.id : ''));
 
@@ -225,7 +225,7 @@ function ConnGraph({ nodes, edges }) {
       <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-faint">
         <span className="flex items-center gap-1.5"><i className="h-2.5 w-2.5 rounded-full bg-red-500" /> flagged IOC</span>
         <span className="flex items-center gap-1.5"><i className="h-2.5 w-2.5 rounded-full bg-violet-400" /> external IP</span>
-        <span className="flex items-center gap-1.5"><i className="h-2.5 w-2.5 rounded-full bg-slate-500" /> internal/host IP</span>
+        <span className="flex items-center gap-1.5"><i className="h-2.5 w-2.5 rounded-full bg-zinc-500" /> internal/host IP</span>
         <span className="ml-auto">{visibleEdges.length} of {edges.length} edges</span>
       </div>
       <div className="mt-2 grid gap-4 lg:grid-cols-[1fr_220px]">
@@ -464,15 +464,15 @@ export default function NetworkAnalysis() {
                     <AreaChart data={timelineData}>
                       <defs>
                         <linearGradient id="band" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#38bdf8" stopOpacity={0.35} />
-                          <stop offset="100%" stopColor="#38bdf8" stopOpacity={0} />
+                          <stop offset="0%" stopColor="#d4d4d8" stopOpacity={0.35} />
+                          <stop offset="100%" stopColor="#d4d4d8" stopOpacity={0} />
                         </linearGradient>
                       </defs>
                       <CartesianGrid stroke={GRID_COLOR} strokeDasharray="3 3" />
                       <XAxis dataKey="label" tick={AXIS} tickLine={false} />
                       <YAxis tick={AXIS} tickLine={false} tickFormatter={(v) => compactNumber(v)} />
                       <Tooltip content={<ChartTooltip />} />
-                      <Area type="monotone" dataKey="bytes" name="Bytes" stroke="#38bdf8" fill="url(#band)" />
+                      <Area type="monotone" dataKey="bytes" name="Bytes" stroke="#d4d4d8" fill="url(#band)" />
                     </AreaChart>
                   </ResponsiveContainer>
                 </div>
@@ -608,14 +608,14 @@ export default function NetworkAnalysis() {
               <p className="text-xs text-amber-400">LLM unavailable: {summary.reason}</p>
             )}
             {summary?.summary && (
-              <div className="rounded-lg border border-line bg-black/30 p-4 text-sm leading-relaxed text-slate-200">
+              <div className="rounded-lg border border-line bg-black/30 p-4 text-sm leading-relaxed text-zinc-200">
                 {summary.summary}
               </div>
             )}
             {summary?.facts && (
               <details className="mt-3">
                 <summary className="cursor-pointer text-[11px] text-faint">grounding fact sheet</summary>
-                <pre className="mt-2 max-h-64 overflow-auto rounded-lg border border-line bg-black/30 p-3 text-[10px] leading-relaxed text-slate-400">
+                <pre className="mt-2 max-h-64 overflow-auto rounded-lg border border-line bg-black/30 p-3 text-[10px] leading-relaxed text-zinc-400">
                   {JSON.stringify(summary.facts, null, 2)}
                 </pre>
               </details>
@@ -746,7 +746,7 @@ function DraftBlock({ title, content }) {
         <Button size="sm" icon={Copy} onClick={copy}>Copy</Button>
         <Button size="sm" icon={Download} onClick={download}>Download</Button>
       </div>
-      <pre className="max-h-56 overflow-auto rounded-lg border border-line bg-black/30 p-3 text-[11px] leading-relaxed text-slate-300">
+      <pre className="max-h-56 overflow-auto rounded-lg border border-line bg-black/30 p-3 text-[11px] leading-relaxed text-zinc-300">
         {content}
       </pre>
     </div>

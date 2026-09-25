@@ -16,7 +16,7 @@ export default function StreamMonitor({ kind }) {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-surface">
-            <Icon size={16} className={isTelegram ? 'text-sky-400' : 'text-primary'} />
+            <Icon size={16} className={isTelegram ? 'text-zinc-300' : 'text-primary'} />
           </div>
           <div>
             <h1 className="text-base font-semibold text-ink">

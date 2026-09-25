@@ -36,7 +36,7 @@ export default function ChoroplethMap({ countries = [], total = 0, onSelect, hei
       path: geoPath(projection),
       color: scaleSequential()
         .domain([1, maxCount || 1])
-        .interpolator(interpolate('#155e75', '#22d3ee')),
+        .interpolator(interpolate('#3f3f46', '#d4d4d8')),
     };
   }, [features, countries]);
 
@@ -66,8 +66,8 @@ export default function ChoroplethMap({ countries = [], total = 0, onSelect, hei
         role="img"
         aria-label="Threat origin map by country"
       >
-        <path d={path({ type: 'Sphere' })} fill="#0a1120" stroke="rgb(var(--color-line))" strokeWidth={1} />
-        <path d={graticulePath} fill="none" stroke="rgba(148,163,184,0.12)" strokeWidth={0.5} />
+        <path d={path({ type: 'Sphere' })} fill="#131316" stroke="rgb(var(--color-line))" strokeWidth={1} />
+        <path d={graticulePath} fill="none" stroke="rgba(161,161,170,0.12)" strokeWidth={0.5} />
         {features.map((f) => {
           const count = countByNum.get(String(f.id)) || 0;
           const isHover = hover && hover.id === String(f.id);
@@ -75,8 +75,8 @@ export default function ChoroplethMap({ countries = [], total = 0, onSelect, hei
             <path
               key={f.id}
               d={path(f)}
-              fill={count > 0 ? color(count) : '#16203a'}
-              stroke={isHover ? '#22d3ee' : 'rgb(var(--color-line))'}
+              fill={count > 0 ? color(count) : '#27272a'}
+              stroke={isHover ? '#d4d4d8' : 'rgb(var(--color-line))'}
               strokeWidth={isHover ? 1.5 : 0.5}
               style={{ cursor: count > 0 ? 'pointer' : 'default', transition: 'fill 120ms' }}
               onMouseMove={(e) => {
@@ -115,7 +115,7 @@ export default function ChoroplethMap({ countries = [], total = 0, onSelect, hei
       {/* Legend */}
       <div className="absolute bottom-2 right-2 flex items-center gap-2 rounded-lg border border-line bg-base/90 px-3 py-2">
         <span className="text-[10px] uppercase tracking-wider text-faint">0</span>
-        <div className="h-2 w-28 rounded-full" style={{ background: 'linear-gradient(to right, #155e75, #22d3ee)' }} />
+        <div className="h-2 w-28 rounded-full" style={{ background: 'linear-gradient(to right, #3f3f46, #d4d4d8)' }} />
         <span className="text-[10px] uppercase tracking-wider text-faint">{compactNumber(total)}</span>
       </div>
     </div>

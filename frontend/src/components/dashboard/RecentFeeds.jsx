@@ -36,8 +36,8 @@ export default function RecentFeeds({ limit = 8 }) {
 
   const renderItem = (f, i, prefix) => {
     const sev = categorySeverity(f.category);
-    const sevMeta = { CRITICAL: 'bg-red-500', HIGH: 'bg-orange-500', MEDIUM: 'bg-amber-500', LOW: 'bg-blue-500', INFO: 'bg-slate-500' };
-    const dotColor = sevMeta[sev] || 'bg-slate-500';
+    const sevMeta = { CRITICAL: 'bg-red-500', HIGH: 'bg-orange-500', MEDIUM: 'bg-amber-500', LOW: 'bg-zinc-400', INFO: 'bg-zinc-600' };
+    const dotColor = sevMeta[sev] || 'bg-zinc-600';
 
     return (
       <li

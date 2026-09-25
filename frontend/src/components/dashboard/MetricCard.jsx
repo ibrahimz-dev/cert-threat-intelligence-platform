@@ -5,12 +5,12 @@ import { cn } from '../../lib/utils';
 import { compactNumber } from '../../utils/format';
 
 const ACCENT_META = {
-  blue:   { tile: 'bg-primary/10 text-primary border-primary/20',         hex: '#4F8EF7' },
+  blue:   { tile: 'bg-primary/10 text-primary border-primary/20',         hex: '#d4d4d8' },
   red:    { tile: 'bg-red-500/10 text-red-400 border-red-500/20',         hex: '#ef4444' },
   violet: { tile: 'bg-violet-500/10 text-violet-400 border-violet-500/20', hex: '#a855f7' },
   amber:  { tile: 'bg-amber-500/10 text-amber-400 border-amber-500/20',   hex: '#f59e0b' },
   // legacy alias
-  cyan:   { tile: 'bg-primary/10 text-primary border-primary/20',         hex: '#4F8EF7' },
+  cyan:   { tile: 'bg-primary/10 text-primary border-primary/20',         hex: '#d4d4d8' },
 };
 
 /**

@@ -69,7 +69,7 @@ function extractSubject(headline) {
 
 const SOURCE_STYLES = {
   'DARKWEB-ONION': 'border-red-500/40 bg-red-500/10 text-red-300',
-  TELEGRAM: 'border-sky-500/40 bg-sky-500/10 text-sky-300',
+  TELEGRAM: 'border-zinc-500/40 bg-zinc-500/10 text-zinc-300',
 };
 
 export default function DarkWebCard({ feed }) {

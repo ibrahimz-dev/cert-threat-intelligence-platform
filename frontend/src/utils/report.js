@@ -202,28 +202,28 @@ export async function exportFullReportPdf() {
 <html lang="en"><head><meta charset="utf-8">
 <title>Argus CTI — Full Threat Intelligence Report</title>
 <style>
-  body{font-family:system-ui,-apple-system,sans-serif;color:#0f172a;max-width:900px;margin:28px auto;padding:0 28px;line-height:1.5}
-  h1{font-size:24px;border-bottom:3px solid #06b6d4;padding-bottom:10px;margin-bottom:4px}
-  h2{font-size:16px;margin-top:30px;color:#155e75;border-left:4px solid #06b6d4;padding-left:10px}
-  h3{font-size:13px;margin:18px 0 6px;color:#334155}
-  p,li{font-size:12.5px;color:#1e293b}
-  .meta{color:#64748b;font-size:12px;margin:0}
-  .muted{color:#94a3b8;font-style:italic}
+  body{font-family:system-ui,-apple-system,sans-serif;color:#18181b;max-width:900px;margin:28px auto;padding:0 28px;line-height:1.5}
+  h1{font-size:24px;border-bottom:3px solid #a1a1aa;padding-bottom:10px;margin-bottom:4px}
+  h2{font-size:16px;margin-top:30px;color:#52525b;border-left:4px solid #a1a1aa;padding-left:10px}
+  h3{font-size:13px;margin:18px 0 6px;color:#3f3f46}
+  p,li{font-size:12.5px;color:#27272a}
+  .meta{color:#71717a;font-size:12px;margin:0}
+  .muted{color:#a1a1aa;font-style:italic}
   .num{text-align:right;font-variant-numeric:tabular-nums}
   .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px}
   table{width:100%;border-collapse:collapse;font-size:12px;margin:10px 0}
-  th,td{border:1px solid #cbd5e1;padding:6px 9px;vertical-align:top;text-align:left}
-  th{background:#f1f5f9}
-  a{color:#0369a1;word-break:break-all}
+  th,td{border:1px solid #d4d4d8;padding:6px 9px;vertical-align:top;text-align:left}
+  th{background:#f4f4f5}
+  a{color:#52525b;word-break:break-all}
   .kpis{width:100%}
-  .kpis td.kpi{border:1px solid #cbd5e1;padding:10px;text-align:center;background:#f8fafc}
-  .kpi-value{font-size:22px;font-weight:700;color:#0f172a}
-  .kpi-label{font-size:11px;color:#64748b;margin-top:2px}
+  .kpis td.kpi{border:1px solid #d4d4d8;padding:10px;text-align:center;background:#fafafa}
+  .kpi-value{font-size:22px;font-weight:700;color:#18181b}
+  .kpi-label{font-size:11px;color:#71717a;margin-top:2px}
   .chip{display:inline-block;border:1px solid;border-radius:999px;padding:1px 8px;font-size:11px;font-weight:600;white-space:nowrap}
   .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:middle}
   .bar{width:140px}
   .bar div{height:9px;border-radius:4px;min-width:2px}
-  .footer{margin-top:34px;padding-top:10px;border-top:1px solid #cbd5e1;color:#94a3b8;font-size:11px}
+  .footer{margin-top:34px;padding-top:10px;border-top:1px solid #d4d4d8;color:#a1a1aa;font-size:11px}
   section{page-break-inside:avoid}
   @media print{body{margin:12mm auto}}
 </style></head><body>${buildReportHtml(data)}</body></html>`);

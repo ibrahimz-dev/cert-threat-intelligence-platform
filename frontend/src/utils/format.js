@@ -52,8 +52,8 @@ export const SEVERITY = {
   CRITICAL: { label: 'CRITICAL', badge: 'bg-red-500/10 text-red-400 border-red-500/40', dot: 'bg-red-500', hex: '#ef4444' },
   HIGH: { label: 'HIGH', badge: 'bg-orange-500/10 text-orange-400 border-orange-500/40', dot: 'bg-orange-500', hex: '#f97316' },
   MEDIUM: { label: 'MEDIUM', badge: 'bg-amber-500/10 text-amber-400 border-amber-500/40', dot: 'bg-amber-500', hex: '#f59e0b' },
-  LOW: { label: 'LOW', badge: 'bg-blue-500/10 text-blue-400 border-blue-500/40', dot: 'bg-blue-500', hex: '#3b82f6' },
-  INFO: { label: 'INFO', badge: 'bg-slate-500/10 text-slate-400 border-slate-500/40', dot: 'bg-slate-500', hex: '#64748b' },
+  LOW: { label: 'LOW', badge: 'bg-zinc-400/10 text-zinc-300 border-zinc-400/30', dot: 'bg-zinc-400', hex: '#a1a1aa' },
+  INFO: { label: 'INFO', badge: 'bg-zinc-600/10 text-zinc-500 border-zinc-600/40', dot: 'bg-zinc-600', hex: '#71717a' },
 };
 
 export const severityStyle = (label) => SEVERITY[(label || '').toUpperCase()] || SEVERITY.INFO;
@@ -73,8 +73,8 @@ export const CATEGORY_COLORS = {
   Exploit: '#f97316',
   Malware: '#a855f7',
   Phishing: '#eab308',
-  Vulnerability: '#3b82f6',
-  Other: '#64748b',
+  Vulnerability: '#a1a1aa',
+  Other: '#71717a',
 };
 
 export const categoryColor = (c) => CATEGORY_COLORS[c] || CATEGORY_COLORS.Other;
@@ -101,9 +101,9 @@ export const THREAT_COLORS = {
   Wiper: '#dc2626',
   'Phishing Kit': '#f472b6',
   'DDoS Tool': '#06b6d4',
-  'Exploit/PoC': '#3b82f6',
+  'Exploit/PoC': '#a1a1aa',
   Backdoor: '#8b5cf6',
-  Other: '#64748b',
+  Other: '#71717a',
 };
 
 export const threatColor = (c) => THREAT_COLORS[c] || THREAT_COLORS.Other;
